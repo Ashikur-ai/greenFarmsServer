@@ -46,7 +46,7 @@ async function run() {
 
         // middlewares 
         const verifyToken = (req, res, next) => {
-            console.log('inside middleware', req.headers.authorization);
+            // console.log('inside middleware', req.headers.authorization);
             if (!req.headers.authorization) {
                 return res.status(401).send({message: 'forbidden access'})
             }
@@ -232,7 +232,7 @@ async function run() {
             const paymentResult = await paymentCollection.insertOne(payment);
 
             // delete item from cartCollection 
-            console.log('payment info', payment); 
+            // console.log('payment info', payment); 
 
             const query = {
                 _id: {
